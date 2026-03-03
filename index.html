@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenova Music | The Sound of the Future</title>
+    <title>Serenova Music | Featured Tracks</title>
     <style>
         body { margin: 0; background-color: #0b0b0b; color: #ffffff; font-family: 'Segoe UI', sans-serif; }
         
@@ -13,16 +13,18 @@
             justify-content: space-between; 
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .hero { 
-            height: 80vh; 
+            height: 60vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
             align-items: center; 
             text-align: center;
-            padding: 0 20px;
         }
 
         h1 { 
@@ -30,20 +32,39 @@
             background: linear-gradient(45deg, #00f2fe 0%, #7000ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Music Gallery Styles */
+        .gallery {
+            padding: 50px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .track-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .track-card:hover { transform: translateY(-10px); background: #252525; }
+
+        .album-art {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: linear-gradient(45deg, #333, #111);
+            border-radius: 10px;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
         }
 
-        p { color: #a0a0a0; font-size: 1.1rem; max-width: 600px; line-height: 1.6; }
-
-        .cta-button {
-            margin-top: 30px;
-            padding: 15px 35px;
-            background: #ffffff;
-            color: #000;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-        }
+        audio { width: 100%; margin-top: 15px; filter: invert(1); }
     </style>
 </head>
 <body>
@@ -52,9 +73,28 @@
     </nav>
 
     <div class="hero">
-        <h1>Music that breathes.</h1>
-        <p>Welcome to the future of sound. Serenova brings a new star to the musical universe.</p>
-        <a href="#" class="cta-button">Launch Player</a>
+        <h1>Latest Releases</h1>
+        <p>Listen to the newest sounds from the Serenova studio.</p>
     </div>
+
+    <section class="gallery">
+        <div class="track-card">
+            <div class="album-art">🎵</div>
+            <h3>Midnight Nebula</h3>
+            <p>Electronic / Chill</p>
+            <audio controls>
+                <source src="YOUR_AUDIO_URL_HERE.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="track-card">
+            <div class="album-art">✨</div>
+            <h3>Starlight Echo</h3>
+            <p>Synthwave</p>
+            <audio controls>
+                <source src="YOUR_AUDIO_URL_HERE.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </section>
 </body>
 </html>
